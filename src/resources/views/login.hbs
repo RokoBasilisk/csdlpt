@@ -1,0 +1,31 @@
+<table class="table table-striped table-hover">
+  <thead class="table-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">ID</th>
+      <th scope="col">Hợp Tác Xã</th>
+      <th scope="col">Loại Cây</th>
+      <th scope="col">Chủ Vườn</th>
+      <th scope="col">Loại Đất</th>
+      <th scope="col">Số Lượng Cây</th>
+      <th scope="col">Ngày Gieo Trồng</th>
+      <th scope="col" colspan="2">Chức Năng</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each records}}
+    <tr>
+        <th scope="row">{{increaseOne @index}}</th>
+        <td>{{this.VuonId}}</td>
+        <td>{{this.HTXId}}</td>
+        <td>{{this.LoaiCayId}}</td>
+        <td>{{this.ChuVuonId}}</td>
+        <td>{{this.LoaiHinhDatDai}}</td>
+        <td>{{this.SoLuongCay}}</td>
+        <td>{{this.NgayGieoTrong}}</td>
+        <td><button href="" class="btn btn-primary">Sửa</button></td>
+        <td><button href="" class="btn btn-danger">Xóa</button></td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
