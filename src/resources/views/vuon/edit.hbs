@@ -1,0 +1,30 @@
+<div class="container mt-4 col-6">
+    <div class="mb-3 text-center">
+        <h2>Chỉnh sửa Vườn</h2>
+    </div>
+    <form action="/vuon/{{this.VuonId}}?_method=PUT" method="post">
+        <div class="mb-3">
+            <label for="LoaiCayId" class="form-label">Loại Cây</label>
+            <input class="form-control" type="text" name="LoaiCayId" id="LoaiCayId" value="{{this.LoaiCayId}}">
+        </div>
+        <div class="mb-3">
+            <label for="ChuVuonId" class="form-label">Chủ Vườn</label>
+            <input class="form-control" type="text" name="ChuVuonId" id="ChuVuonId" value="{{this.ChuVuonId}}">
+        </div>
+        <div class="mb-3">
+            <label for="LoaiHinhDatDai" class="form-label">Loại Đất</label>
+            <input class="form-control" type="text" name="LoaiHinhDatDai" id="LoaiHinhDatDai" value="{{this.LoaiHinhDatDai}}">
+        </div>
+        <div class="mb-3">
+            <label for="SoLuongCay" class="form-label">Số Lượng Cây Trồng</label>
+            <input class="form-control" type="text" name="SoLuongCay" id="SoLuongCay" value="{{this.SoLuongCay}}">
+        </div>
+        <div class="mb-3">
+            <label for="NgayGieoTrong" class="form-label">Ngày Gieo Trồng</label>
+            <input class="form-control" type="text" name="NgayGieoTrong" id="NgayGieoTrong" value="{{convertToJSDateTime this.NgayGieoTrong}}">
+        </div>
+        <div class="mb-3 text-center">
+            <button type="submit" class="btn btn-primary">Chỉnh Sửa</button>
+        </div>
+    </form>
+</div>
