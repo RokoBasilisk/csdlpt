@@ -1,3 +1,10 @@
+<script>
+  function sendForm() {
+    let form = document.getElementById("server_form");
+    form.submit();
+  }
+</script>
+
 <header id="header">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
@@ -7,13 +14,15 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/vuon?name={{name}}">Vườn</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Danh Sách Loại Cây</a>
-        </li>
-        <li class="nav-item">
+        <li class="nav-item d-lg-flex align-self-center">
+          <form id="server_form" action="/home/select" method="post">
+            <select onchange="sendForm()" name="server" id="server">
+              <option disabled selected>-- Chọn Server --</option>
+              <option value="VN">Server Trung Tâm</option>
+              <option value="NORTH">Server Miền Bắc</option>
+              <option value="CENT">Server Miền Trung</option>
+            </select>
+          </form>
           <a class="nav-link disabled" href="">{{name}}</a>
         </li>
       </ul>

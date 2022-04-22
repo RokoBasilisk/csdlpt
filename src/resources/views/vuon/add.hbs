@@ -1,0 +1,54 @@
+<div class="container mt-4 lg-col-6 sm-col-12">
+    <div class="mb-3 text-center">
+        <h2>Thêm Vườn</h2>
+    </div>
+    <form action="/vuon/add" method="post">
+        <div class="mb-3">
+            <label for="htxid" class="form-label">Hợp Tác Xã</label>
+            <select name="htxid" id="htxid" class="form-control" required>
+                <option disabled selected>-- Chọn Hợp Tác Xã --</option>
+                {{#each htx}}
+                <option value="{{this.HTXId}}">{{this.TenHTX}}</option>
+                {{/each}}
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="loaicayid" class="form-label">Loại Cây</label>
+            <select name="loaicayid" id="loaicayid" class="form-control" required>
+                <option disabled selected>-- Chọn Loại Cây Trồng --</option>
+                {{#each loaicay}}
+                <option value="{{this.LoaiCayId}}">{{this.TenLoaiCay}}</option>
+                {{/each}}
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="chuvuonid" class="form-label">Chủ Vườn</label>
+            <select name="chuvuonid" id="chuvuonid" class="form-control" required>
+                <option disabled selected>-- Chọn Chủ Vườn --</option>
+                {{#each chuvuon}}
+                <option value="{{this.ChuVuonId}}">{{this.TenChuVuon}}</option>
+                {{/each}}
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="loaihinhdatdai" class="form-label">Loại Đất</label>
+            <select name="loaihinhdatdai" id="loaihinhdatdai" class="form-control" required>
+                <option disabled selected>-- Chọn Loại Đất --</option>
+                {{#each (getSoilsType loaicay)}}
+                <option value="{{this}}">{{this}}</option>
+                {{/each}}
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="soluongcay" class="form-label">Số Lượng Cây Trồng</label>
+            <input class="form-control" type="text" name="soluongcay" id="soluongcay" value="" required>
+        </div>
+        <div class="mb-3">
+            <label for="ngaygieotrong" class="form-label">Ngày Gieo Trồng</label>
+            <input class="form-control" type="date" name="ngaygieotrong" id="ngaygieotrong" required>
+        </div>
+        <div class="mb-3 text-center">
+            <button type="submit" class="btn btn-primary">Thêm Vườn</button>
+        </div>
+    </form>
+</div>

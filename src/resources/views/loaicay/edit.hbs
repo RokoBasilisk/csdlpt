@@ -1,0 +1,57 @@
+<div class="container mt-4 lg-col-6 sm-col-12">
+    <div class="mb-3 text-center">
+        <h2>Chỉnh sửa Loại Cây {{loaicay.TenLoaiCay}}</h2>
+    </div>
+    <form action="/loaicay/{{loaicay.LoaiCayId}}?_method=PUT" method="post">
+        <div class="mb-3">
+            <label for="tenloaicay" class="form-label">Tên Loại Cây</label>
+            <input class="form-control" type="text" name="tenloaicay" id="tenloaicay" value="{{loaicay.TenLoaiCay}}">
+        </div>
+        <div class="mb-3">
+            <label for="loaihinhdatdai" class="form-label">Loại Đất</label>
+            <select name="loaihinhdatdai" id="loaihinhdatdai" class="form-control" required>
+                <option disabled selected>-- Chọn Loại Đất --</option>
+                <option value="Mun">Mun</option>
+                <option value="Sét">Đất Sét</option>
+                <option value="Cát">Đất Cát</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="thoigianthichhopgieotrong" class="form-label">Mùa Trồng Thích Hợp</label>
+            <select name="thoigianthichhopgieotrong" id="thoigianthichhopgieotrong" class="form-control" required>
+                <option disabled selected>-- Chọn Mùa Trồng Thích Hợp --</option>
+                <option value="Mùa Spring">Mùa Spring</option>
+                <option value="Mùa Summer">Mùa Summer</option>
+                <option value="Mùa Autumn">Mùa Autumn</option>
+                <option value="Mùa Winter">Mùa Winter</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="thoigiandukienthuhoach" class="form-label">Thời Gian Dự Kiến Thu Hoạch</label>
+            <select name="thoigiandukienthuhoach" id="thoigiandukienthuhoach" class="form-control" required>
+                <option disabled selected>-- Chọn Thời Gian Dự Kiến Thu Hoạch --</option>
+                <option value="1 Nam">1 Năm</option>
+                <option value="2 Nam">2 Năm</option>
+                <option value="3 Nam">3 Năm</option>
+                <option value="4 Nam">4 Năm</option>
+                <option value="5 Nam">5 Năm</option>
+                <option value="6 Nam">6 Năm</option>
+                <option value="7 Nam">7 Năm</option>
+                <option value="8 Nam">8 Năm</option>
+                <option value="9 Nam">9 Năm</option>
+                <option value="10 Nam">10 Năm</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="tuoitho" class="form-label">Tuổi Thọ Cây</label>
+            <input class="form-control" type="number" name="tuoitho" id="tuoitho" value="{{loaicay.TuoiTho}}">
+        </div>
+        <div class="mb-3">
+            <label for="nhietdothichhop" class="form-label">Nhiệt Độ Thích Hợp Cho Cây</label>
+            <input class="form-control" type="number" name="nhietdothichhop" id="nhietdothichhop" value="{{loaicay.NhietDoThichHop}}">
+        </div>
+        <div class="mb-3 text-center">
+            <button type="submit" class="btn btn-primary">Chỉnh Sửa</button>
+        </div>
+    </form>
+</div>

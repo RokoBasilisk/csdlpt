@@ -1,4 +1,4 @@
-<div class="container mt-4 col-6">
+<div class="container mt-4 lg-col-6 sm-col-12">
     <div class="mb-3 text-center">
         <h2>Chỉnh sửa Vườn</h2>
     </div>
@@ -21,10 +21,15 @@
         </div>
         <div class="mb-3">
             <label for="NgayGieoTrong" class="form-label">Ngày Gieo Trồng</label>
-            <input class="form-control" type="text" name="NgayGieoTrong" id="NgayGieoTrong" value="{{convertToJSDateTime this.NgayGieoTrong}}">
+            <input class="form-control" type="date" name="NgayGieoTrong" id="NgayGieoTrong" data-date="{{convertToJSDateTime this.NgayGieoTrong}}">
         </div>
         <div class="mb-3 text-center">
             <button type="submit" class="btn btn-primary">Chỉnh Sửa</button>
         </div>
     </form>
 </div>
+
+<script>
+    let ngaygieotrong = document.getElementById('NgayGieoTrong');
+    ngaygieotrong.value = ngaygieotrong.dataset.date;
+</script>

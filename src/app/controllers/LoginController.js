@@ -2,7 +2,9 @@ const { getAdminById } = require("../../config/db/index");
 
 class LoginController {
   async index(req, res, next) {
-    res.render("login");
+    res.render("login", {
+      check: true,
+    });
   }
   async login(req, res, next) {
     let { username, password } = req.body;

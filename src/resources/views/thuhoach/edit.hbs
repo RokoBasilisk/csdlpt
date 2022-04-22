@@ -1,0 +1,18 @@
+<div class="container mt-4 lg-col-6 sm-col-12">
+    <div class="mb-3 text-center">
+        <h2>Chỉnh sửa Thu Hoạch</h2>
+    </div>
+    <form action="/thuhoach/{{thuhoach.ThuHoachId}}?_method=PUT" method="post">
+        <div class="mb-3">
+            <label for="thoigianthuhoach" class="form-label">Thời Gian Thu Hoạch</label>
+            <input class="form-control" type="date" name="thoigianthuhoach" id="thoigianthuhoach" value="{{convertToJSDateTime thuhoach.ThoiGianThuHoach}}">
+        </div>
+        <div class="mb-3">
+            <label for="tongsanluong" class="form-label">Tổng Sản Lượng</label>
+            <input class="form-control" type="number" name="tongsanluong" id="tongsanluong" value="{{thuhoach.TongSanLuong}}">
+        </div>
+        <div class="mb-3 text-center">
+            <button type="submit" class="btn btn-primary">Chỉnh Sửa</button>
+        </div>
+    </form>
+</div>

@@ -22,3 +22,23 @@ body{
 .path:hover {
     color: rgba(0,0,0,1);
 }
+
+.change {
+    color: #ccc;
+    transition: color .3s;
+}
+
+.change:hover {
+    color: black;
+}
+
+.list-sidebar-item {
+    text-decoration: none;
+    color: $black-color;
+}
+
+.active {
+    a {
+        color: white;
+    }
+}

@@ -1,0 +1,18 @@
+<div class="container mt-4 lg-col-6 sm-col-12">
+    <div class="mb-3 text-center">
+        <h2>Chỉnh sửa Khu Vực {{khuvuc.TenKhuVuc}}</h2>
+    </div>
+    <form action="/khuvuc/{{khuvuc.KhuVucId}}?_method=PUT" method="post">
+        <div class="mb-3">
+            <label for="tenkhuvuc" class="form-label">Tên Hợp Tác Xã</label>
+            <input class="form-control" type="text" name="tenkhuvuc" id="tenkhuvuc" value="{{khuvuc.TenKhuVuc}}">
+        </div>
+        <div class="mb-3">
+            <label for="dientich" class="form-label">Diện Tích</label>
+            <input class="form-control" type="text" name="dientich" id="dientich" value="{{khuvuc.DienTich}}">
+        </div>
+        <div class="mb-3 text-center">
+            <button type="submit" class="btn btn-primary">Chỉnh Sửa</button>
+        </div>
+    </form>
+</div>

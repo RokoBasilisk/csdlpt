@@ -1,0 +1,31 @@
+<div class="container mt-4 lg-col-6 sm-col-12">
+    <div class="mb-3 text-center">
+        <h2>Thêm Hợp Tác Xã</h2>
+    </div>
+    <form action="/hoptacxa/add" method="post">
+        <div class="mb-3">
+            <label for="khuvucid" class="form-label">Khu Vực</label>
+            <select name="khuvucid" id="khuvucid" class="form-control" required>
+                <option disabled selected>-- Chọn Khu Vực --</option>
+                {{#each khuvuc}}
+                <option value="{{this.KhuVucId}}">{{this.TenKhuVuc}}</option>
+                {{/each}}
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="tenhtx" class="form-label">Tên Hợp Tác Xã</label>
+            <input class="form-control" type="text" name="tenhtx" id="tenhtx" required>
+        </div>
+        <div class="mb-3">
+            <label for="vitri" class="form-label">Vị Trí</label>
+            <input class="form-control" type="text" name="vitri" id="vitri" required>
+        </div>
+        <div class="mb-3">
+            <label for="dientich" class="form-label">Diện Tích</label>
+            <input class="form-control" type="text" name="dientich" id="dientich" required>
+        </div>
+        <div class="mb-3 text-center">
+            <button type="submit" class="btn btn-primary">Thêm Hợp Tác Xã</button>
+        </div>
+    </form>
+</div>

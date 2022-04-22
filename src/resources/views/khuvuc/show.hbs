@@ -8,12 +8,12 @@
           {{/each}}
         </div>
         <div class="col-lg-6 col-sm-12 text-end">
-          <a href="/vuon/add" class="btn btn-primary">
+          <a href="/khuvuc/add" class="btn btn-primary">
             <svg xmlns="http://www.w3.org/2000/svg" style="color: white;" width="16" height="16" fill="currentColor" class="bi bi-patch-plus" viewBox="0 0 16 16">
               <path fill-rule="evenodd" d="M8 5.5a.5.5 0 0 1 .5.5v1.5H10a.5.5 0 0 1 0 1H8.5V10a.5.5 0 0 1-1 0V8.5H6a.5.5 0 0 1 0-1h1.5V6a.5.5 0 0 1 .5-.5z"/>
               <path d="m10.273 2.513-.921-.944.715-.698.622.637.89-.011a2.89 2.89 0 0 1 2.924 2.924l-.01.89.636.622a2.89 2.89 0 0 1 0 4.134l-.637.622.011.89a2.89 2.89 0 0 1-2.924 2.924l-.89-.01-.622.636a2.89 2.89 0 0 1-4.134 0l-.622-.637-.89.011a2.89 2.89 0 0 1-2.924-2.924l.01-.89-.636-.622a2.89 2.89 0 0 1 0-4.134l.637-.622-.011-.89a2.89 2.89 0 0 1 2.924-2.924l.89.01.622-.636a2.89 2.89 0 0 1 4.134 0l-.715.698a1.89 1.89 0 0 0-2.704 0l-.92.944-1.32-.016a1.89 1.89 0 0 0-1.911 1.912l.016 1.318-.944.921a1.89 1.89 0 0 0 0 2.704l.944.92-.016 1.32a1.89 1.89 0 0 0 1.912 1.911l1.318-.016.921.944a1.89 1.89 0 0 0 2.704 0l.92-.944 1.32.016a1.89 1.89 0 0 0 1.911-1.912l-.016-1.318.944-.921a1.89 1.89 0 0 0 0-2.704l-.944-.92.016-1.32a1.89 1.89 0 0 0-1.912-1.911l-1.318.016z"/>
             </svg>
-            Thêm Vườn
+            Thêm Khu Vực
           </a>
         </div>
       </div>
@@ -23,29 +23,21 @@
   <thead class="table-dark">
     <tr>
       <th scope="col">#</th>
-      <th scope="col">Vườn ID</th>
-      <th scope="col">Hợp Tác Xã</th>
-      <th scope="col">Loại Cây</th>
-      <th scope="col">Chủ Vườn</th>
-      <th scope="col">Loại Đất</th>
-      <th scope="col">Số Lượng Cây</th>
-      <th scope="col">Ngày Gieo Trồng</th>
+      <th scope="col">Khu Vực ID</th>
+      <th scope="col">Tên Khu Vực</th>
+      <th scope="col">Diện Tích</th>
       <th scope="col" colspan="2">Chức Năng</th>
     </tr>
   </thead>
   <tbody>
-    {{#each records}}
+    {{#each khuvuc}}
     <tr>
         <th scope="row">{{increaseOne @index}}</th>
-        <td><a class="change" href="/thuhoach/{{this.VuonId}}">{{this.VuonId}}</a></td>
-        <td>{{this.HTXId}}</td>
-        <td>{{this.LoaiCayId}}</td>
-        <td>{{this.ChuVuonId}}</td>
-        <td>{{this.LoaiHinhDatDai}}</td>
-        <td>{{this.SoLuongCay}}</td>
-        <td>{{convertToJSDateTime this.NgayGieoTrong}}</td>
-        <td><a href="/vuon/{{this.VuonId}}/edit" class="btn btn-primary">Sửa</a></td>
-        <td><button type="button" class="btn btn-danger" data-id="{{this.VuonId}}" data-bs-toggle="modal" data-bs-target="#deleteModal">Xóa</button></td>
+        <td><a class="change" href="/hoptacxa/{{this.KhuVucId}}">{{this.KhuVucId}}</a></td>
+        <td>{{this.TenKhuVuc}}</td>
+        <td>{{this.DienTich}} Héc-Ta</td>
+        <td><a href="/khuvuc/{{this.KhuVucId}}/edit" class="btn btn-primary">Sửa</a></td>
+        <td><button type="button" class="btn btn-danger" data-id="{{this.KhuVucId}}" data-bs-toggle="modal" data-bs-target="#deleteModal">Xóa</button></td>
     </tr>
     {{/each}}
   </tbody>
@@ -53,12 +45,13 @@
     </div>
   </div>
 </div>
+
 <!-- Modal -->
 <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Xóa Vườn Này?</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Xóa Khu Vực Này?</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
@@ -80,12 +73,11 @@
     var deleteform = document.forms['delete-form'];
     var id;
     $('#deleteModal').on('show.bs.modal', function (event) {
-      console.log("Hello");
       var button = $(event.relatedTarget);
       id = button.data('id');
     })
     btnDelete.onclick = function () {
-      deleteform.action = `/vuon/${id}/delete?_method=DELETE`
+      deleteform.action = `/khuvuc/${id}/delete?_method=DELETE`
       deleteform.submit();
     }
 </script>

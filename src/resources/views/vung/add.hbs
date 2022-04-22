@@ -1,0 +1,27 @@
+<div class="container mt-4 lg-col-6 sm-col-12">
+    <div class="mb-3 text-center">
+        <h2>Thêm Vùng</h2>
+    </div>
+    <form action="/vung/add" method="post">
+        <div class="mb-3">
+            <label for="mienid" class="form-label">Miền</label>
+            <select name="mienid" id="mienid" class="form-control" required>
+                <option disabled selected>-- Chọn Miền --</option>
+                {{#each mien}}
+                <option value="{{this.MienId}}">{{this.TenMien}}</option>
+                {{/each}}
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="tenvung" class="form-label">Tên Vùng</label>
+            <input class="form-control" type="text" name="tenvung" id="tenvung" required>
+        </div>
+        <div class="mb-3">
+            <label for="dientich" class="form-label">Diện Tích</label>
+            <input class="form-control" type="text" name="dientich" id="dientich" required>
+        </div>
+        <div class="mb-3 text-center">
+            <button type="submit" class="btn btn-primary">Thêm Vùng</button>
+        </div>
+    </form>
+</div>

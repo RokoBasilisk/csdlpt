@@ -12,9 +12,17 @@
 </head>
 <body>
     <div class="app">
-            {{> header}}
+            {{!-- {{> header }} --}}
+            {{#unless check}}
+                {{> header}}
+            {{/unless}}
         <main id="main">
-            {{{body}}}
+            <div class="row">
+                {{> sidebar}}
+                <div class="col-lg-10 col-sm-12">
+                    {{{body}}}
+                </div>
+            </div>
         </main>
             {{> footer}}
     </div>
