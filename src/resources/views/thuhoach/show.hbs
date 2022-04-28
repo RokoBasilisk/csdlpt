@@ -36,7 +36,7 @@
         <th scope="row">{{increaseOne @index}}</th>
         <td>{{this.ThuHoachId}}</td>
         <td>{{this.VuonId}}</td>
-        <td>{{emptyOrNot this.ThoiGianThuHoach}}</td>
+        <td>{{convertToJSDateTime (emptyOrNot this.ThoiGianThuHoach)}}</td>
         <td>{{emptyOrNot this.TongSanLuong}}</td>
         <td><a href="/thuhoach/{{this.ThuHoachId}}/edit" class="btn btn-primary">Sửa</a></td>
         <td><button type="button" class="btn btn-danger" data-id="{{this.ThuHoachId}}" data-bs-toggle="modal" data-bs-target="#deleteModal">Xóa</button></td>
@@ -53,7 +53,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Xóa Khu Vực Này?</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Xóa Thu Hoạch Này?</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">

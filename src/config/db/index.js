@@ -140,7 +140,7 @@ async function getHopTacXaById(id, server) {
       .request()
       .input("id", sql.Int, id)
       .query("select * from HopTacXa where HTXId = @id");
-    return result.recordset[0];
+    return result.recordset;
   } catch (error) {
     console.log(error);
   }

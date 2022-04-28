@@ -62,6 +62,9 @@ app.engine(
         let uniqueSoilsType = [...new Set(Soils)];
         return uniqueSoilsType;
       },
+      Select: (str1, str2) => {
+        return str1.trim() === str2.trim() ? "selected" : "";
+      },
     },
   })
 );

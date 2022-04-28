@@ -73,7 +73,7 @@ class HoptacxaController {
       let response = await db.getHopTacXaById(req.params.id, storeData.server);
       if (!response) return res.redirect("back");
       return res.render("hoptacxa/edit", {
-        htx: response,
+        htx: response[0],
       });
     } catch (error) {
       console.log(error);
